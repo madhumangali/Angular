@@ -1,0 +1,52 @@
+Angular :-
+-----------
+Angular is used for building client-side applications using HTML, CSS and a programming language like JavaScript or TypeScript.
+Angular is not a programming language in itself like JavaScript. Instead, it is a framework which uses a programming language like JavaScript/TypeScript.
+Angular is a JavaScript Framework which allows us to create Single-page Applications.
+
+Single-page Applications :-
+--------------------------
+In a single-page application only one html page contains and the content will vary.
+
+advantages :-
+-------------
+SPA makes a web application faster and gives the user a reactive experience.
+Using JavaScript to change the content of the webpage dynamically is much faster than having to reach out to the server for every page change 
+and for every new piece of data we want to display.
+If we do need some data from the server, we can load it in the background without making the webpage unresponsive.
+
+why use Angular? :-
+------------------
+We can use JavaScript or jQuery to do the same thing which we can do with Angular. But As the application grows:
+Vanilla JavaScript or jQuery code becomes hard to maintain and we will need a way to properly structure our application.
+A lot of applications built using vanilla JavaScript/jQuery is hard to test.
+Angular gives our application a clean and loosely coupled structure that is easy to understand & maintain.
+It brings a lot of utility code which can be re-used in lot of applications. Especially, when dealing with user navigation & browser history.
+Applications built with Angular are more testable.
+
+Setup :-
+--------
+Node Installation.
+Angular ClI installation.
+To terminate live development server, press - Ctrl + с
+To restart the development server, run command ng serve.
+
+TypeScript :-
+--------------
+TypeScript is a free and open-source programming language developed by Microsoft. It is a superset of JavaScript.
+TypeScript has additional features that do not exist in current version of JavaScript supported by most browser.
+TypeScript is strongly typed. But JavaScript is dynamically typed.
+It has object oriented features which we do not have in JavaScript like interface, access modifiers, fields, properties, generics etc.
+With typescript, we can catch errors at compile time.
+
+Component :-
+-----------
+Component is a TypeScript class decorated with @Component decorator and it contains methods & properties which we can use in HTML.
+A class: It contains the code required for the view template. That means, it contains the UI logic.
+A View template: It defines the user interface. It contains the HTML, directives & data binding.
+A decorator: It adds meta data to the class, making it a component.
+
+
+
+
+
