@@ -46,6 +46,300 @@ A class: It contains the code required for the view template. That means, it con
 A View template: It defines the user interface. It contains the HTML, directives & data binding.
 A decorator: It adds meta data to the class, making it a component.
 
+?? Pending :-
+
+
+ngIf Directive :-
+------------------
+The ngIf Directive is a structural directive.
+The ngIf directive is used to add or remove element from a webpage based on agiven condition.
+
+ngClass Directive :-
+-------------------
+The ngClass is an attribute directive.
+The ngClass directive is used to add a CSS class dynamically to a webpage element.
+
+Custom event Binding :-
+----------------------
+We can pass data from component class to view template and vice versa using property binding, string interpolation and event binding.
+We can also pass data from parent component to child component and vice versa. We use @Input & @Output decorator for that.
+
+Input Decorator :-
+---------------------
+We can pass data from parent component to child component using @Input decorator.
+We also call it custom property binding because here we bind the custom properties of child component class with the property or method of parent component class.
+
+Template reference variable :-
+------------------------------
+A Template reference variable is a reference to any DOM element, component or a directive in the template.
+
+nullish coalescing operator - (?) :-
+-----------------------------------
+
+View Encapsulation :-
+--------------------
+The View Encapsulation is a concept or behaviour in angular, where component CSS styles are encapsulated into the components view and do not effect the rest of the application.
+
+There are three types of View encapsulation in Angular
+1. ViewEncapsulation. None --- (Global level css)
+2. ViewEncapsulation. Emulated --- (compoonet wise css styles)
+3. ViewEncapsulation. ShadowDOM --- (its create a sepearate Dom which can seperates from another dom files)
+
+ng-content :-
+------------
+The ng-content is used when we want to insert the content dynamically inside the component that helps to increase component reusability.
+Using ng-content we can pass content inside the component selector and when angular parses that content that appears at the place of ng-content.
+
+Angular LifeCycle Hooks :-
+--------------------------
+The Angular lifecycle hooks are the methods that angular invokes on the directives and components as it creates, changes, and destroys them.
+
+When the angular application-starts, it first creates and renders the root component. Then, it creates and renders its Children's & their children. It forms a tree of components
+Once Angular loads the components, it starts the process of rendering the view. To do that, it needs to check the input properties, evaluate the data bindings & expressions,
+ render the projected content etc.
+Angular lets us know when these events happen using lifecycle hooks. 
+For Example:
+    ngOnInit when Angular initializes the component for the first time.
+    When a component's input property change, Angular invokes ngOnChanges
+    If the component is destroyed, Angular invokes ngOnDestroy
+
+Change Detection Cycle :-
+-------------------------
+Change detection is the mechanism by which angular keeps the template in sync with the component.
+
+ex :-<div>Hello {{name }} </div>
+
+Projected content:-
+-----------------
+Projected content is that HTML content which replaces the <ng-content> directive in child component.
+
+ eg: child Component                                    eg: Parent Component
+--------------------                                   --------------------
+  <h2>Child Component</h2>                            <h1>Parent Component</h1>
+  <ng-content></ng-content>                             <app-child>
+                                                          <p>This content is injected from parent</p>
+                                                        </app-child>
+
+Input bound properties:-
+------------------------
+These are those properties of a component class which is decorated with @Input() decorator.
+
+  Child Component
+ ------------------
+ @Input() message: string
+
+Constructor of a Component:-
+---------------------------
+Life Cycle of a component begins, when Angular creates the component class. First method that gets invoked is class Constructor.
+Constructor is neither a life cycle hook nor it is specific to Angular. It is a JavaScript feature.
+It is a method which gets invoked, when a class is created.
+When a constructor is called, at that point, none of the components input properties are updated and available to use. Neither its child components are constructed. Projected contents are also not available.
+Once Angular instantiates the class, it kick-start the first change detection cycle of the component.
+
+ngOnChanges :-
+--------------
+It is executed right at the start, when a new component is created, and it also gets executed whenever one of the bound input property changes.
+Angular invokes ngOnChanges life cycle hook whenever any data-bound input property of the component or directive changes.
+Input properties are those properties, which we define using the @Input decorator. It is one of the ways by which a parent component communicates with the child component.
+Initializing the Input properties is the first task that angular carries during the change detection cycle. And if it detects any change in input property, then it raises the ngOnChanges hook. It does so during every change detection cycle.
+This hook is not raised if change detection does not detect any changes.
+
+eg: child component :                        eg: Parent Component :
+---------------------                        --------------------
+@Input() message: string                      <app-child [message]="message">
+                                                  </app-child>
+ 
+ngOnInit :-
+-------------
+Angular raises the ngOnInit hook, after it creates the component and updates its input properties.
+This hook is fired only once and immediately after its creation (during the first change detection).
+This is a perfect place where you want to add any initialization logic for your component.
+Here you have access to every input property of the component. You can use them in http get requests to get the data from the back-end server or run some initialization logic etc.
+But remember that, by the time ngOnlnit get's called, none of the child components or projected content are available at this point. Hence any properties we decorate with @ViewChild, @ViewChildren,@ContentChild &@ContentChildren will not be available to use.
+
+ngDoCheck :-
+------------
+The Angular invokes the ngDoCheck hook event during every change detection cycle. This hook is invoked even if there is no change in any of the properties.
+For example, ngDoCheck will run if you clicked a button on the webpage which does not change anything. But still, it's an event.
+Angular invokes ngDoCheck it after the ngOnChanges & ngOnInit hooks.
+You can use this hook to Implement a custom change detection,whenever Angular fails to detect the changes made to Input properties.
+ngDoCheck is also a great method to use, when you want to execute some code on every change detection cycle.
+
+ngAfterContentInit :-
+----------------------
+ngAfterContentInit Life cycle hook is called after the Component's projected content has been fully initialized.
+Angular also updates the properties decorated with the @ContentChild and @ContentChildren before raising this hook.This hook is also raised, even if there is no content to project.
+The content here refers to the external content injected from the parent component via Content Projection.
+The Angular Components can include the ng-content element, which acts as a placeholder for the content from the parent.
+Parent injects the content between the opening & closing selector element. Angular passes this content to the child component
+
+eg : Child Component                                            eg : parent Component
+----------------------                                          ------------------------
+<h2>Child Component</h2>                                        <h1>Parent Component</h1>
+<ng-content></ng-content>                                       <app-child>
+                                                                  <p>This content is injected from parent</p>
+                                                                </app-child>
+
+ngAfterContentChecked :-
+------------------------
+ngAfterContentChecked Life cycle hook is called during every change detection cycle after Angular finishes checking of component's projected content.
+Angular also updates the properties decorated with the @ContentChild and @ContentChildren before raising this hook.Angular calls this hook even if there is no projected content in the
+component.
+This hook is very similar to the ngAfterContentInit hook. Both are called after the external content is initialized, checked & updated.
+Only difference is that ngAfterContentChecked is raised after every change detection cycle. While ngAfterContentInit during the first change detection cycle.
+
+ngAfterViewInit :-
+------------------
+ngAfterViewInit hook is called after the Component's View & all its child views are fully initialized. Angular also updates the properties decorated with the @ViewChild &@ViewChildren properties before raising this hook.
+The View here refers to the view template of the current component and all its child components & directives.
+This hook is called during the first change detection cycle, where angular initializes the view for the first time
+At this point all the lifecycle hook methods & change detection of all child components & directives are processed & & Component is completely ready.
+This is a component only hook.
+
+ngAfterViewChecked :-
+---------------------
+The Angular fires this hook after it checks & updates the component's views and child views. This event is fired after the ngAfterViewInit and after that during every change detection cycle.
+This hook is very similar to the ngAfterViewInit hook. Both are called after all the child components & directives are initialized and updated.
+Only difference is that ngAfterViewChecked is raised during every change detection cycle. While ngAfterViewInit is raised during the first change detection cycle.
+This is a component only hook.
+
+ngOnDestroy :-
+--------------
+If you destroy a component, for example, when you placed ngIf on a component, and this ngIf then set to false, at that time, ngIf will remove that component from the DOM, at that time, ngOnDestroy is called.
+This method is the great place to do some cleanup work, because this is called right before the objects will be destroyed itself by angular.
+This is the correct place where you would like to Unsubscribe Observables and detach event handlers to avoid memory leaks.
+
+ @ViewChild :-
+----------------
+we can access the view using viewchild decorator
+
+Html Element (elements/tags) --> Component class (typescript)
+
+ eg : app.component.html                                        eg:   app. component.ts
+-------------------------                                       ---------------------------
+ <div>                                                          @Component( ({
+       <р #paragraph>T This is a paragraph</p>                    selector: 'app-root',
+ </div>                                                            templateUrl: 1./app.component.html',
+                                                                    styleUrls:
+                                                                  })
+                                                                 export class AppComponent{
+                                                                         title = 'ContentChild';
+                                                                    @ViewChild(*paragraph)) paragraphEl: ElementRef;
+                                                                  }
+
+Content Projection :-
+---------------------
+
+eg : child. component.html                         eg: parent. component.html
+---------------------------                        --------------------------
+<h2>Child Component</h2>                          <h1>Parent Component</h1>
+<ng-content></ng-content>                         <app-child>
+                                                     <p>This is a Paragraph</p>
+                                                   </app-child>
+
+@ContentChild :-
+----------------
+Here we can access the parent Html component in child component class.
+
+eg: parent.component.html                                eg: child.component.ts
+--------------------------                               -----------------------
+ <h1>Parent Component</h1>                                 @Component ({
+ <app-child>                                                   selector: 'app-child',
+    <р #paragraph>1 This is a paragraph</p>                     templateUrl: ./child. .component.html',
+ </app-child>                                                   styleUrls: "" 
+                                                            })
+                                                        export class ChildComponent {
+                                                               title = 'ContentChild';
+                                                            @ContentChild('paragraph') paragraphEl: ElementRef;
+                                                          }
+
+Directive :-
+----------
+Directives are simply an instruction to the DOM
+
+Directives in Angular :-
+------------------------
+COMPONENTS => Component is a directive with a template.
+  eg:-  AppComponent
+ATTRIBUTE DIRECTIVE => Attribute directive can be used as an attribute to change the behaviour or appearance of an element, component or other directives.
+  eg :- ngStyle & ngClass
+STRUCTURAL DIRECTIVE => Structural directive controls the DOM element, using which we can add or remove elements from DOM.
+ eg :- ngIf & ngFor
+
+@HostListner :-
+----------------
+The @HostListner decorator listens to the DOM event on the host element and it reacts to that event by executing an event handler method.
+
+@HostBinding :-
+---------------
+The @HostBinding decorator binds a host element property to a variable in a directive or a component.
+
+Structural directive :-
+-----------------------
+A structural directive manipulates the DOM by adding or removing element to or from the DOM on which we use it.
+
+*ngIf -> * is used to indicate that it is an structural directive to angular.
+           After that internally angular creates an <ng-template> and the entire view will inser/delete as per condition.
+           In this the *ngIf is written normal like others directives as [ngIf]
+
+eg :-                           
+-----
+<div *ngIf="condition">                 <ng-template [ngIf]="condition">
+  <p> Para </p>                             <div>
+</div>                                            <p> Para </p>      
+                                             </div>
+                                        </ng-template>
+
+Custom directive :-
+Conditional Directive :-
+custom AppStyle Directive :-
+Structural Directive:-
+Custom Structural Directive :-
+ngSwitch :-
+------------------
+
+Services in Angular :-
+------------------------
+A Service is a re-usable TypeScript class that can be used in multiple components across your Angular application.
+advantages :
+--------------
+Services are easier to debug and test.
+Services provides re-usability of code.
+With services, we can communicate across different components.
+
+Dependency Injection :-
+------------------------
+Dependency Injection is a technique in which a class receives its dependencies from external sources rather than creating them itself.
+
+Hierarchical Injection :-
+-------------------------
+If we provide a service (e.g.UserService) on one component, the angular framework will create and inject an instance of that service for that component and all its child component.
+If we provide a service (e.g. .UserService) in the appModule, the same instance of that service will be available throughout the app i.e. in all components, all directives and all services.
+When we provide a service on AppComponent, that service will be instantiated and injected for AppComponent and all its child component and their child component. All of them will receive the same instance of that service.
+The lowest level of service providing is on the component with no child component. If we provide a service there, this component will have its own instance of that service.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
