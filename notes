@@ -318,6 +318,91 @@ If we provide a service (e.g. .UserService) in the appModule, the same instance 
 When we provide a service on AppComponent, that service will be instantiated and injected for AppComponent and all its child component and their child component. All of them will receive the same instance of that service.
 The lowest level of service providing is on the component with no child component. If we provide a service there, this component will have its own instance of that service.
 
+@Directive - on directives.
+@Component - on components.
+@Injectable - on receiving service class.
+
+Observables :-
+--------------
+We use Observables to perform asynchronous operations and handle asynchronous data.
+An Observable is a function that converts ordinary stream of data into an Observable stream of data. You can think of Observable as a wrapper around the Ordinary stream of data.
+
+    Observerable              <-----      observer
+  (stream of data)                      (Subcriber) 
+
+RxJS :-
+-------
+The RxJS (Reactive Extension library for JavaScript) is a JavaScript library, that allows us to work with asynchronous data stream.
+
+JavaScript is a single threaded programming language.
+
+=> The Processing the data in angular is done in 2 processes .
+1.promise
+2.observables
+
+promise :-                                                                     observarbles :-
+--------------                                                                --------------------
+it sends the data to the client                                      In this the data sends to the client in streams means whatever the data processed
+after completion of entire processing of data from data.             at that moment from the Db to the client.
+If the data use/ not use by the client it sends the data.            In this, if the data only uses by the clint at the time only process the data.
+promise is a native library to javascript.                           But Observables is a native library to Rxjs. 
+
+
+Observables explanation :-
+-------------------------
+it contain subscribe method , and this method has arguments (next,error,complete).
+next method to execute some events/function.
+error method is used to handle errors. after execution of error method no method will excute.
+complete method is used to intimate that the processing is completed. after execution of complete method no method will excute.
+
+Different ways to create a observables :-
+------------------------------------------
+1. new 
+2. create Method
+3. of 
+4. from
+
+of operator v/s from operator :-
+--------------------------------
+of -> projects the elements/arrays as it is.
+      it accepts n number of elements/arrays.
+
+from -> it iterates the elements one by one in an array.
+        it accepts only one element/array.
+        it used to convert the promise to observable when required.
+
+Operators :-
+------------
+Operators in RxJS are functions that takes an observable as input and transform it into a new observable and return it. We use operators to manipulate the observable data stream
+eg: map(), filter()
+
+Subjects :-
+--------------
+Subjects is also same like EventEmitters.
+
+UnSubscribe :-
+--------------
+Unsubcribe to an observable is important, because its keep on emitting the event/action , when you are not unsubscribe the satck memory gets full and the exception takes place.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
