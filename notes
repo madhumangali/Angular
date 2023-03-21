@@ -384,6 +384,54 @@ UnSubscribe :-
 --------------
 Unsubcribe to an observable is important, because its keep on emitting the event/action , when you are not unsubscribe the satck memory gets full and the exception takes place.
 
+Routing :-
+----------
+Routing allows us to navigate from one part of our application to another part or from one view to another view.
+
+routerLink :-
+----------
+Router link is used to navigate the link with out reloading the page but by using href it reloads the page.
+
+routerLinkActive :-
+--------------------
+RouterLinkActive is used to apply csss styling to the routerlink.
+
+routerLinkActiveOptions :-
+--------------------------
+when child router link is active than parent router link is also in active , at a time two buttons will active .
+To avoid that problem this concept was introduced  [routerLinkActiveOptions] = '{exact:true}'.
+
+Absolute Path :-
+---------------
+[routerLink] ="'/About'"   ->   localhost:4200/home   ---->    localhost:4200/About
+
+Relative Path :-
+----------------
+[routerLink] ="'About'"   ->   localhost:4200/home   ---->    localhost:4200/home/About
+
+../Home -> one Folder Up to the directory/link
+
+navigate() and navigateByUrl() :-
+----------------------------------
+The above two methods are  internally used Absolute path only.
+this.router.navigate(['Home']);
+this.router.navigateByUrl('Home');
+
+incase if you want to use relative path than the following is the syntax.
+this.router.navigate(['Home'],{relativeTo:this.activatedRoute});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
