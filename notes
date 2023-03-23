@@ -421,6 +421,110 @@ incase if you want to use relative path than the following is the syntax.
 this.router.navigate(['Home'],{relativeTo:this.activatedRoute});
 
 
+Using Observables we can write a call a back function and we can update the diplay data.
+
+routeParam :-
+--------------
+ex: localhost:4200/products/:id=1234
+
+RouteParamter is compulsary we need to pass .
+
+Query parameters :-
+--------------------
+Query parameters are optional parameters that you pass to a route.
+These query parameters are added at the end of the URL separated by '?'.
+
+ex: localhost:4200/products?id=1234&&name=iphone
+
+Fragment :-
+----------
+A fragment in URL is a link which jumps to a section or a content in HTML page which contains the ID mentioned in the fragment. A fragment comes after # sign.
+eg : Localhost:4200/Products#service
+
+Child / Nested Routes :-
+-----------------------
+Child or Nested routes means routes inside routes like parent component and child component.
+
+Route Guards :-
+---------------
+Angular Route guards can be used to control whether the user can navigate to or away from the given route based on some condition.
+
+use case of route guards :-
+------------------------
+ To confirm the navigation operation.
+ Asking whether to save data before moving away from view.
+ Allow access to certain parts of the application to specific users.
+ Validating the Route parameters before navigating to the route.
+ Fetching some data before you display the component view.
+
+Types of Route Guards :-
+-----------------------
+ CanActivate
+ CanDeactivate
+ Resolve
+ CanLoad
+ CanActivateChild
+
+How to create a Route Guard :-
+--------------------------------
+1. create a route guard as a service.
+2. implement the respective route guard interface.
+3. implement the required route guard method.
+4. Provide the guard service from the root AppModule.
+5. use that route guard on the route which you want to guard.
+
+CanActivate Route Guard :-
+--------------------------
+CanActivate Route Guard decides if a route can be activated or not. This Route Guard can be used in cases where the user is not authorized to navigate to the target route.
+This Route guard is applicable to single route, it not applicable for child routes.
+
+CanActivateChild Route Guard :-
+--------------------------------
+CanActivateChild Route Guard is applicable to all the child routes ,but not for the child routes.
+
+CanDeactivate Route Guard :-
+------------------------------
+CanDeactivate Route Guard decides weather a user can navigate away from a route or not.
+
+Resolve Route Guard :-
+------------------------
+Reslove Route Guard allows the data before the navigation of route takes place.
+
+Navigation Events :-
+---------------------
+By Enabling the  enableTracing we can log the events of navigation in the console when we navigate from one page to another page.
+There are the many events available for navigation events.
+1.NavigationStart
+2.RoutesRecognized
+3.GuardsCheckStart
+4.childActivationStart
+5.ActivationStart
+6.GuardsCheckEnd .... etc
+We can Subcribe to  these events and we can perform call back function in the mean while time of processing data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
