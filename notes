@@ -502,6 +502,143 @@ There are the many events available for navigation events.
 6.GuardsCheckEnd .... etc
 We can Subcribe to  these events and we can perform call back function in the mean while time of processing data.
 
+Custom Pipes :-
+----------------
+The Pipes are a great way to transform the appearance of elements in the template.
+The Angular comes with some great built-in pipes like Date pipe, Currency pipe, and Number pipe, etc. But if these pipes do not cover your needs, then we can create our own custom pipe in Angular.
+To create a custom pipe, first we need to create a pipe class. 
+The pipe class must implement the PipeTransform interface. We also decorate it with @pipe decorator. Give a name to the pipe under name metadata of the @pipe decorator. Finally, we create the transform method, which transforms given value to the desired output.
+Angular team recommends not to use pipes to filter and sort data. This is because a filtering and sorting pipe can significantly impact the performance of the application if not implemented carefully. To better understand the performance implications, let's implement a custom pipe to filter data.
+
+Pure Pipe :-
+------------
+Pure pipes are those pipes which gets executes when Angular detects a pure change on the input value.
+
+Whenever we create a new pipe in Angular that pipe is a pure pipe. We can also set the pipe as pure or impure explicitely by setting pure property of pipe decorator to true or false respectively.
+
+Angular executes a pure pipe only when it detects a pure change to the input value. A pure change is either 
+- a change to a primitive input value (String, Number, Boolean) or
+- a changed object reference (Array, Date, Object)
+A pure pipe is not executed if the input to the pipe is a reference type like object and only the property values of the object has change but not the reference.
+
+So pure pipes are fast, but using them for filtering data is not a good idea because, the filtering may not work as expected if the source data is updated without a change to the object reference.
+
+Impure Pipes :-
+-----------------
+The impure pipes are those pipes which are executed for every change detection cycle even if there is no change in the source data. Due to this impure pipes are very costly performance wise and should avoid using impure pipes.
+
+Implementing the data filter logic in an Angular component, so that, we have better control on when that code should and shouldn't execute.
+
+Async Pipe :-
+--------------
+ We use async pipe to handle asynchronous data in Angular.
+
+Angular Pipes takes a data as input and formats or transform the data tbefore displaying it in the view. We use them to change the appearance of the data before presenting it to the user. The most common use case of pipes is displaying the dates in the correct format as per the user’s locale.
+
+The syntax of the pipe is as follows: 
+
+Expression | pipeOperator[:pipeArguments]
+
+- Expression: is the expression, which you want to transform
+- | : is the Pipe Character
+- pipeOperator : name of the Pipe
+- pipeArguments: arguments to the Pipe
+
+Forms in Angular :-
+---------------------
+
+Template-Driven Form                              Reactive Form
+---------------------                        ---------------------
+ Simple Basic Form                          Complex form with more control
+ Easy to start with                         Structure of form is defined in TypeScript class                               
+ Based on template (HTML)
+
+ngModelGroup :-
+--------------
+To group form controls we use ngModelGroup directive on the container element of form control and specify a name for that. Behind the scenes, a FormGroup object is created for that container and in that object the form controls are created as its properties.
+
+The advantage of using a form group is that, we can do form validation for the control group together instead of doing validation on indivisual form elements.
+
+SetValue() and PatchValue() Methods :-
+-----------------------------------
+When we use setValue to set values for form control, we need to pass the exact structure of form object and form group to setValue method. If the structure does not match, angular will throw an error. So, we can use setValue method, when we want to set value for all the form controls in a form.
+
+On the other hand, we can use patchValue when we want to set value for some of the form controls. Here, we do not need to pass the exact structure of form object. Instead, we can pass the structure of form control whose value we want to set.
+
+reset() method :-
+------------------
+The NgForm object has a value property which contains all the form control as its property and the value entered for those form controls as the value for thos properties.
+
+So, to read the value entered in the form controls of a template driven form, we need to access the value property on NgForm and on that we can access the required property values.
+
+We can also reset the form controls to their initial value and state using reset() method of NgForm
+
+Reactive Form :-
+-----------------
+Unlike template-driven form, we define the structure of a reactive form in typescript class. 
+Even the validation of a reactive form is done in typescript class.
+ We still need to create the form using HTML but we can connect the HTML form with the reactive form defined in typescript class using formGroup directive.
+Also, we define the form controls for a reactive form in the typescript class using FormControl class. and we can also set some default value for each form control by passing a default value to the FormControl() constructor.
+
+Form Array :-
+-------------
+The FormArray is a way to manage the collection of Form Controls in Angular. The controls can be a FormGroup, FormControl, or another FormArray.
+
+We can group Form Controls in Angular forms in two ways:
+ 1. Using FormGroup and
+ 2. Using FormArray.
+The difference is how they implement it. In FormGroup controls becomes a property of the FormGroup. Each control is represented as key-value pair.
+While in FormArray, the controls become part of an array.
+
+Custom Async Validators :-
+-------------------------
+Creating an async validator is very similar to creating a sync validator. The only difference is that, async validator either returns a promise or an observable.
+
+Also remember that, angular does not provide any built in async validator. But it allows us to create an async validator.
+
+We use the async validator when we need to send an HTTP call to the server to check if the data is valid.
+
+Creating a Async Validator is simple as creating a function, which must obey the following rules
+- The function must return either an observableor a promise
+- Return null for valid, or an ValidationErrorCode if the input is invalid
+
+Value Changes Event :-
+----------------------
+The ValueChanges event is raised by the Angular Forms whenever the value of the FormControl, FormGroup or FormArray changes.
+
+StatusChanges event :-
+---------------------
+The StatusChanges event is raised by the Angular Forms whenever the angular calculates the validation status of a FormControl, FormGroup or FormArray.
+
+Http Requests :-
+----------------
+URL                 yourdomain.com/products/id
+HTTP VERBS          GET, POST, PUT, PATCH, DELETE
+HEADERS             Metadata for the request
+BODY                Data to send to the server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
