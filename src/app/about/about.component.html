@@ -1,0 +1,11 @@
+<div class="flex">
+    <div class="sample-card" *ngFor="let founder of founders">
+        <div class="card" style="width: 18rem;" >
+            <img [src]="founder.pic" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{founder.name}}</p>
+              <p class="card-text">{{founder.position}}</p>
+            </div>
+          </div>
+    </div>
+   </div>

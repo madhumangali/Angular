@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+</head>
+<body>
+    
+    <div class="main">
+
+       <div class="flex">
+
+        <div class="sample-card" *ngFor="let book of books "  >
+
+          <div *ngIf="searchText === '' || book.title.toLowerCase().includes(searchText.toLowerCase())" ng-disable="disable">
+
+
+            <div *ngIf="categoryText === '' || book.catergory.toLowerCase().includes(categoryText.toLowerCase())"> 
+
+              <div class="card" style="width: 18rem;" >
+                  <img [src]="book.pic" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">{{book.title}}</p>
+                   <div> <span>Price: {{book.price}}$</span></div>
+                    <button id="card-button" [routerLink]="['/Home/Details',book.id]">Details</button>
+
+                    <button id="card-button-buy" (click)="addToCart(book.id)">Add to cart</button>
+                  </div>
+                </div>
+                
+            </div>
+
+
+          </div>
+
+          
+          
+
+           </div>
+              
+          </div>
+          
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<div class="blog">
+
+  <div class="featured">
+    
+    <div class="book">
+     <div class="main" *ngFor="let book of featuredBooks;let i = index ">
+         <div class="card" style="width: 18rem;" *ngIf="i<=4" >
+ 
+             <img *ngIf="i===0" [src]="book.pic" class="card-img-top" alt="..." [ngStyle]=" {'margin-left':'900px',' z-index': '300' ,'position': 'relative', 'box-shadow': '5px 5px 5px 5px rgba(0, 0, 0, 0.5)'} ">
+             <img *ngIf="i==1" [src]="book.pic" class="card-img-top" alt="..." [ngStyle]=" {'margin-left':'530px', 'z-index': '200','position': 'absolute', 'box-shadow': '5px 5px 5px 5px rgba(0, 0, 0, 0.5)'} ">
+             <img *ngIf="i==2" [src]="book.pic" class="card-img-top" alt="..." [ngStyle]=" {'margin-left':'400px', 'z-index': '200','position': 'absolute', 'box-shadow': '5px 5px 5px 5px rgba(0, 0, 0, 0.5)'} ">
+             <img *ngIf="i==3" [src]="book.pic" class="card-img-top" alt="..." [ngStyle]=" {'margin-left':'-120px', 'z-index': '100','position': 'absolute', 'box-shadow': '5px 5px 5px 5px rgba(0, 0, 0, 0.5)'} ">
+             <img *ngIf="i==4" [src]="book.pic" class="card-img-top" alt="..." [ngStyle]=" {'margin-left':'-100px', 'z-index': '100','position': 'absolute', 'box-shadow': '5px 5px 5px 5px rgba(0, 0, 0, 0.5)'} ">
+             <!-- <div class="card-body">
+               <p class="card-text">book.desc</p>
+             </div> -->
+           </div>
+     </div>
+    </div>
+    <span id="text">Featured Books of this Month</span>
+     <button id="btn">See More</button>
+ </div>
+ 
+ <div id="second">
+   <span id="para">Best Sellers</span>
+ </div>
+  
+ <div class="shws">
+ 
+   <div class="any">
+ 
+     <div class="best" *ngFor="let book of featuredBooks; let i = index">
+ 
+         <div class="card" id="card" style="width: 10rem;" *ngIf="i<=limit" >
+           <img [src]="book.pic" class="card-img-top" alt="...">
+           <div class="card-body">
+             <p class="card-text">{{book.title}}</p>
+            <div> <span>Price: {{book.price}}$</span></div>
+           </div>
+         </div>
+         
+     </div>
+ 
+ </div>
+ 
+ 
+   <button id="shwMore" (click)="shwMoreBtnClick()" [hidden]="shwMorebtn">Show More</button>
+    <button id="shwMore" (click)="shwLessBtnClick()" [hidden]="shwLessbtn">Show Less</button>
+ </div>
+
+ 
+</div>

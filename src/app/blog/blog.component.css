@@ -1,0 +1,91 @@
+*{
+    /* margin-bottom: 20px; */
+    color: white;
+}
+.blog{
+ /* height: auto; */
+ padding-bottom: 100px;
+}
+.featured{
+    display: flex;
+    flex-wrap: wrap;
+   /* position: absolute; */
+   /* border-radius: none; */
+   /* border-len: ; */
+}
+#text{
+    margin-top: -80px;
+    margin-left: 200px;
+}
+#btn{
+    margin-top: -20px;
+    width: 100px;
+    height: 30px;
+    margin-left: -140px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+#second{
+    margin: 0px 100px;
+    margin-top: 50px;
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    border-top: 1px solid white;
+    /* padding: 10px; */
+    padding-left: 36%;
+    padding-top: 40px;
+}
+#para{
+    background: green;
+    padding: 20px;
+    border-radius: 10px;
+}
+.book{
+display: flex;
+
+}
+
+img{
+    width: 100px;
+    height: 150px;
+}
+main{
+    margin-top: 0px;
+    float: right;
+}
+
+.any{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shws{
+    border: 1px solid white;
+    margin-left: 250px;
+    margin-top: 50px;
+    width: 900px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.best{
+    width: 220px;
+    margin-bottom: 20px;
+    /* border: 1px solid pink; */
+    /* overflow: hidden; */
+
+}
+#card{
+    margin-left: 50px;
+    overflow: hidden;
+}
+#shwMore{
+    margin-top: 10px;
+    padding: 10px 10px;
+    margin-left: 400px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+}

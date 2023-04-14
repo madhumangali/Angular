@@ -1,0 +1,53 @@
+
+<div class="main">
+    
+    <div class="address">
+        <p>
+            HouseNo : -----<br>
+            StreetName : ----- <br>
+            Mandal/village : -------- <br>
+            District : ----------- <br>
+            Pincode : ---------------<br>
+            MobileNo : ------------
+        </p>
+        <button id="change">Change</button>
+    </div>
+
+    <div class="details" *ngFor="let book of books">
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+
+                <div class="card-header"  > 
+                    <img [src]="book.pic" class="d-block w-40" alt="...">
+                    <!-- <img [src]="book.pic"> -->
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">{{book.title}}</h5>
+                    <p class="card-text">{{book.desc}}</p>
+                    <p class="price">${{book.price}}</p>
+                    <span> Quantity : </span>
+                    <button id="btn" class="dec" (click)="decrement()">-</button>
+                    <input id="in" class="val" [(ngModel)]="quantity" >
+                    <button id="btn" class="inc" (click)="increment()">+</button>
+
+                  </div>
+
+              </div>
+
+            </div>
+
+            <div class="price-details">
+                <p class="price">Price : ${{price}}</p>
+                <p class="price">Discount : ${{discount}}</p>
+                <p class="price">Delivery Charges : ${{deliveryCharges}}</p>
+                <p>---------------------------------</p>
+                <p class="price">Total : ${{total}}</p>
+                <p>---------------------------------</p>
+                <button id="pay">Pay Now</button>
+              </div>
+          </div>
+    </div>
+</div>

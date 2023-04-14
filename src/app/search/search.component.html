@@ -1,0 +1,13 @@
+<div class="search"  >
+
+    <input type="text"  [(ngModel)]="searchValue"  >
+
+    <div class="sub">
+        <button ><mat-icon  color="primary" svgIcon="search" matPrefix></mat-icon></button>
+    </div>
+
+</div>
+
+<div >
+    <app-home [searchText] = "searchValue"> </app-home>
+</div>

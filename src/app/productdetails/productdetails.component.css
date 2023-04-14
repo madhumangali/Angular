@@ -1,0 +1,28 @@
+.productDetails{
+    box-sizing: border-box;
+    background-color: white;
+    width: 600px;
+    height: auto;
+    margin: 100px 500px;
+    border-radius: 20px;
+}
+.card-header{
+padding-top: 30px ;
+padding-left: 150px;
+}
+.card-body{
+    padding: 10px;
+    text-align: center;
+}
+#btn{
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+    /* padding: 10px; */
+}
+p{
+    padding: 5px;
+}

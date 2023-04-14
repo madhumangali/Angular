@@ -1,0 +1,23 @@
+.search{
+    /* background-color: antiquewhite; */
+    display: flex;
+}
+input{
+ border: pink;
+ width: 40%;
+ margin-left: 30%;
+ margin-bottom: 20px;
+ padding: 10px;
+ border-radius: 10px;
+}
+button{
+    margin-left: -30px;
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    display: flexbox;
+    border: none;
+    
+}
+
+

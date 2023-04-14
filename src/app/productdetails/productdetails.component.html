@@ -1,0 +1,28 @@
+<div class="productDetails">
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" *ngFor="let book of books">
+
+            <div class="card-header"  > 
+                <img [src]="book.pic" class="d-block w-40" alt="...">
+                <!-- <img [src]="book.pic"> -->
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Title : {{book.title}}</h5>
+                <p class="card-text">Description : {{book.desc}}</p>
+                <p class="price">price : ${{book.price}}</p>
+                <p class="card-text">Author : {{book.author}}</p>
+                <p class="card-text">Rating : {{book.rating}}</p>
+                <!-- <span> Quantity : </span> -->
+                <button id="btn"  [routerLink]="['/Home']">Close</button>
+               
+
+              </div>
+
+          </div>
+
+        </div>
+
+</div>

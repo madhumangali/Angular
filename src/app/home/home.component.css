@@ -1,0 +1,48 @@
+*{
+    /* background-color: yellow; */
+    /* background: url("https://images.pexels.com/photos/1420003/pexels-photo-1420003.jpeg"); */
+    /* background-size: auto; */
+    /* width: 100%; */
+    height: auto;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    margin-top: 0px;
+}
+.card-body{
+    margin-left: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+.sample-card{
+    margin-left: 70px;
+    display: flex;
+   
+}
+.flex{
+    /* padding: 10%; */
+    color: white;
+     display: flex;
+     flex-wrap: wrap; 
+}
+
+
+#card-button{
+    background-color: rgb(13, 102, 102);
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    /* margin-left: 20px; */
+    margin-right: 80px;
+   
+}
+
+#card-button-buy{
+    background-color: rgb(13, 102, 102);
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    /* margin-right: 60px; */
+}

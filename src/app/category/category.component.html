@@ -1,0 +1,9 @@
+
+<ng-select [items]="categories"
+               bindLabel="name"
+               placeholder="Select Category"
+               appendTo="body"
+               [(ngModel)]="selected">
+</ng-select>
+<!-- <button (click)="category()">Click</button> -->
+  <app-home [categoryText]="selected" [disable]="true"></app-home>

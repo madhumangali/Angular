@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div class="container myform" [ngClass]="formStatus">
+
+        <form action="" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" *ngIf="!isRegistered">
+            
+        <h2>Responsive Registartion Form</h2>
+    
+        <!-- <div formGroupName="userdetails"> -->
+
+            <div class="input-icons">
+                <mat-icon  color="primary" svgIcon="mail" matPrefix></mat-icon>
+            <input type="email" placeholder="Email" class="pop" formControlName="email" required="true"> <br>
+
+            <div>
+                <small *ngIf="!reactiveForm.get('email').valid && reactiveForm.get('email').touched">Email is a required field.</small>
+                <!-- <small *ngIf="reactiveForm.get('firstName').errors?.['noSpaceAllowed']">First Name contains space</small> -->
+             </div>
+           
+            <mat-icon  color="primary" svgIcon="lock" matPrefix></mat-icon>
+            <input type="password" placeholder="Password"  class="pop" formControlName="password" > <br>
+
+            <mat-icon  color="primary" svgIcon="lock" matPrefix></mat-icon>
+            <input type="password" placeholder="Re-type Password"  class="pop" formControlName="retypePassword"> <br>
+            
+            <!-- <div>
+                <small *ngIf=" (reactiveForm.get('retypePassword') === reactiveForm.get('password') )">First Name contains space</small>
+            </div> -->
+
+
+            <mat-icon  color="primary" svgIcon="lobster" matPrefix></mat-icon>
+            <input type="text"  placeholder="First Name" class="bi bi-person-fill" id="name"  class="pop" formControlName="firstName"> 
+            <div>
+                <small *ngIf="reactiveForm.get('firstName').errors?.['required']">First Name is a requrired field.</small>
+                <small *ngIf="reactiveForm.get('firstName').errors?.['noSpaceAllowed']">First Name contains space</small>
+             </div>
+            <mat-icon  color="primary" svgIcon="lobster" matPrefix></mat-icon>
+            <input type="text" placeholder="Last Name"  class="bi bi-person-fill" id="lastname"  class="pop" formControlName="lastName"> <br>
+            </div>
+    
+           
+        
+            <input type="radio" value="male" id="btn" formControlName="gender">&nbsp;
+            <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" value="female" id="btn" formControlName="gender">
+            <label for="female">Female</label><br>
+        
+            <select name="Country" id="" class="pop" formControlName="country" >
+                <option> Select A country </option>
+                <option value="india">India</option>
+                <option value="india">Afghanistan</option>
+                <option value="india">Pakistan</option>
+                <option value="india">USA</option>
+            </select> <br>
+    
+            <input type="checkbox" id="btn" value='true' formControlName="terms"> &nbsp;
+            <label for="">I agree with terms and conditions</label><br>
+            <input type="checkbox" id="btn" value='true' formControlName="newsLetter"> &nbsp;
+            <label for="">I want to receive the newsletter</label><br>
+
+            <button  type="submit" id="submit" value="submit">Register</button>
+
+        <!-- </div> -->
+
+
+    </form>
+
+    <div *ngIf="isRegistered" id="registered">
+       <p >Thanks for Registering !</p>
+       <button [routerLink]="['/Signin']" id="login">Login</button>
+    </div>
+
+    </div>
+
+    
+</body>
+</html>
