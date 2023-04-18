@@ -1,13 +1,15 @@
 import { Component,EventEmitter,Input,OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { CommonService } from '../common-service/commonservice.service';
 import { AppComponent } from '../app.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 // declare var person:any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers:[NavbarComponent]
 })
 export class HomeComponent {
 
@@ -46,11 +48,5 @@ this.books=this.service.books;
 
 this.app.count(this.service.books.filter(book => book.cartStatus==='ACTIVE').length);
 }
-
-detailsOfProduct(id:number){
-  alert("")
-}
-
-
 
 }

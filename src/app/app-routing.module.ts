@@ -14,10 +14,13 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { IntropageComponent } from './intropage/intropage.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const routes: Routes = [
   // {path:'',redirectTo:'/Home',pathMatch:'full'},
+  
+  {path:'Navbar', component:NavbarComponent},
   {path:'About', component:AboutComponent},
   {path:'Home', component:HomeComponent},
   {path:'Search', component:SearchComponent},
@@ -27,6 +30,9 @@ const routes: Routes = [
   {path: 'Cart',children:[
     {path:'Buy/:id',component: BuyComponent }
   ]},
+  // {path: 'Navbar',children:[
+  //   {path:'Home',component: BuyComponent }
+  // ]},
   {path: 'Home',children:[
     {path:'Details/:id',component: ProductdetailsComponent }
   ]},

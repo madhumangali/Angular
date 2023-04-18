@@ -1,4 +1,4 @@
-<div>
+
     <div class="main">
 
         <div class="cart" *ngFor="let book of books; let i=index ">
@@ -11,16 +11,16 @@
                   <h5 class="card-title">{{book.title}}</h5>
                   <p class="card-text">{{book.desc}}</p>
                   <p class="card-text">${{book.price}}</p>
-                  <!-- <a href="#" class="btn btn-primary">Buy now</a> -->
-                  <button class="btn btn-primary" (click)="deleteFromCart(book.id)">Delete</button>
+                  <div class="btns">
+                    <button class="btn btn-primary" (click)="deleteFromCart(book.id)">Delete</button>
                   <button class="btn btn-primary" id="buy" (click)="buy(book.id)" >Buy now</button>
-                </div>
+                  </div>
+                   </div>
               </div>
         </div>
 
-        <div *ngIf="inc <= 0 " id="empty">
-           <p>Products are not added to cart ! pls add.</p>
+        <div *ngIf="inc <= 0 " id="empty" >
+           <p >Products are not added to cart ! pls add.</p>
         </div>
         
     </div>
-</div>

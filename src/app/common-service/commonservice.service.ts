@@ -43,6 +43,8 @@ export class CommonService{
         
      ]
 
+     cartBadgeStatus= true;
+     
      users: User[] =[];
 
      isSignedin= false;

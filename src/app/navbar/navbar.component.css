@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    /* width: 100%; */
+    background-color: aqua;
+    /* overflow: hidden; */
+   }
+
+   .navbarmenu{
+      /* width: 100%; */
+   }
+   
+   #nav-button{
+   background: transparent;
+   color: white;
+   border: none;
+   }
+   
+   ul{
+       display: flex;
+       padding-left: 850px;
+       padding-right: 100px;
+       margin-bottom: 20px;
+   }
+   li{
+       list-style: none;
+       padding: 20px;
+       
+   }
+   a{
+       text-decoration: none;
+       color: white;
+   }
+   
+   

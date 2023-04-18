@@ -1,38 +1,59 @@
 *{
-    /* margin-bottom: 20px; */
     color: white;
 }
-.blog{
- /* height: auto; */
- padding-bottom: 100px;
+blog{
+    width: 100%;
+   
 }
-.featured{
-    display: flex;
-    flex-wrap: wrap;
-   /* position: absolute; */
-   /* border-radius: none; */
-   /* border-len: ; */
+.first{
+  
+    /* display: flex; */
+    width: 70%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    height: 200px;
+    box-sizing: border-box;
+    margin-left: 15%;
+    margin-top: 50px;
+    border-radius: 20px;
+    display: inline-block;
+
+}
+    img{
+        width: 100px;
+        height: 150px;
+    }
+
+    .card{
+        margin-top: 20px;
+       margin-left: 220px;
+    }
+
+p{
+    margin-top: 50px;
+    margin-left: 40px;
+    float: left;
 }
 #text{
-    margin-top: -80px;
-    margin-left: 200px;
+    padding: 10px;
 }
 #btn{
-    margin-top: -20px;
+    margin-left: 40px;
+    margin-top: 20px;
     width: 100px;
     height: 30px;
-    margin-left: -140px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
+    border: none;
     border-radius: 10px;
 }
+
+
+
 #second{
     margin: 0px 100px;
     margin-top: 50px;
-    /* margin-left: 100px;
-    margin-right: 100px; */
     border-top: 1px solid white;
-    /* padding: 10px; */
     padding-left: 36%;
     padding-top: 40px;
 }
@@ -40,20 +61,13 @@
     background: green;
     padding: 20px;
     border-radius: 10px;
-}
-.book{
-display: flex;
-
+    color: white;
 }
 
-img{
-    width: 100px;
-    height: 150px;
-}
-main{
-    margin-top: 0px;
-    float: right;
-}
+
+
+
+
 
 .any{
     display: flex;
@@ -62,11 +76,12 @@ main{
 
 .shws{
     border: 1px solid white;
-    margin-left: 250px;
+    margin-left: 15%;
     margin-top: 50px;
-    width: 900px;
+    width: 70%;
     padding: 20px 20px 20px 20px;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 .best{
@@ -77,15 +92,118 @@ main{
 
 }
 #card{
-    margin-left: 50px;
-    overflow: hidden;
+    margin-left: 80px;
+    /* background-color: antiquewhite; */
 }
+#btns{
+    text-align: center;
+    }
 #shwMore{
     margin-top: 10px;
     padding: 10px 10px;
-    margin-left: 400px;
+    /* margin-left: 400px; */
     border-radius: 10px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
 }
+.img-two{
+   width: 150px;
+   margin-bottom: 0px;
+}
+.card-body{
+   display: inline-block;
+}
+.card-text{
+    margin-top: 10px;
+    margin-left: 0px;
+    float: left;
+}
+
+
+
+
+@media screen and (max-width: 950px) {
+    .blog{
+        font-size: 10px;
+        /* width: 100%; */
+    }
+    #imgone{
+      width: 50px ;
+      height: auto;
+      position: unset;
+      display: flex;
+    }
+    p{
+        margin-top: 120px;
+        margin-left: 100px;
+    }
+    #btn{
+        margin-left: 20px;
+    }
+    #text{
+        padding: 5px;
+    }
+    .card{
+        margin-top: 20px;
+       margin-left: -50px;
+    }
+    .first{
+        width: 90%;
+        margin-left: 5%;
+    }
+    button{
+        font-size: 10px;
+      }
+}
+
+
+@media screen and (max-width: 600px) {
+    #second{
+        margin: 0px 100px;
+        margin-top: 50px;
+        padding-left: 36%;
+        padding-top: 40px;
+    }
+  
+#second{
+    margin: 0px 120px;
+    margin-top: 50px;
+   
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
+#para{
+  /* justify-content: center; */
+  margin-top: 30px;
+}
+
+
+.shws{
+    margin-left: 5%;
+    width: 90%;
+    padding: 5px;
+}
+
+.best{
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+#card{
+    width: 50px;
+    height: auto;
+    margin-left: 20px;
+    width: 100px;
+}
+.img-two{
+    width: 50px ;
+    height: auto;
+  }
+  
+
+}
+

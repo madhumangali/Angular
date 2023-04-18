@@ -2,15 +2,23 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body{
-    width: 100%;
-    height: 100%;
-    background: url('https://images.pexels.com/photos/1420003/pexels-photo-1420003.jpeg');
-    background-size: 100% 100%;
-    background-position: top center;
-    background-repeat: repeat;
-  }
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+  html
+{
+ margin:0px;
+ height:100%;
+ width:100%;
+ background:url('https://images.pexels.com/photos/1420003/pexels-photo-1420003.jpeg')no-repeat center center fixed; 
+ -webkit-background-size:cover;
+ -o-background-size:cover;
+ -moz-background-size:cover;
+ background-size:cover;
+}
 
   input:focus, textarea:focus, select:focus{
     outline: none;
 }
+

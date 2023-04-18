@@ -1,12 +1,8 @@
 *{
-    /* background-color: yellow; */
-    /* background: url("https://images.pexels.com/photos/1420003/pexels-photo-1420003.jpeg"); */
-    /* background-size: auto; */
-    /* width: 100%; */
-    /* height: 80px; */
     color: white;
     margin: 0px 0px 0px 0px;
     margin-top: 0px;
+    /* background-color: yellowgreen; */
 }
 .card-body{
     margin-left: 20px;
@@ -16,16 +12,25 @@
 .sample-card{
     margin-left: 70px;
     display: flex;
-   
+   width: 200px;
 }
 img{
     height: 200px;
 }
 .flex{
-    /* padding: 10%; */
     color: white;
      display: flex;
      flex-wrap: wrap; 
+}
+
+@media screen and (max-width: 950px) {
+    img{
+        height: 100px;
+    }
+    .sample-card{
+        margin-left: 50px;
+       width: 100px;
+    }
 }
 
 #card-button{

@@ -1,20 +1,17 @@
 .main{
     display: flex;
     justify-content: center;
-    /* -left: 200px; */
 }
 .address,.details{
     box-sizing: border-box;
-    color: black;
     background-color: white;
+    color: black;
     margin: 50px 50px;
-    width: 20%;
+    height: 200px;
     padding: 20px;
     border-radius: 10px;
-    height: 200px;
 }
 .details{
-    width: 35%;
     height: auto;
 }
 #change{
@@ -68,5 +65,19 @@ p{
     border: none;
     background-color: blue;
     color: white;
+}
+
+@media screen and (max-width: 900px) {
+    
+    .main{
+        display: inline;
+    }
+
+    .carousel-item{
+        display: inline;
+    }
+    img{
+        width: 200px;
+    }
 }
 

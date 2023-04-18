@@ -10,27 +10,9 @@ import { HomeComponent } from './home/home.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   
-  title = 'SampleProjectOne';
-  page:string='';
-  cartBadge=true;
-
- public cartItemsCount:number = 0;
-
-  ngOnInit(){
-   this.page="Intro";
-
-  }
-
-  count(num:number){
-    this.cartItemsCount=num;
-    console.log(this.cartItemsCount);
-    if(this.cartItemsCount > 0){
-      this.cartBadge=false;
-    }
-  }
-
+ 
   constructor(private matIconRegistry:MatIconRegistry,
     private domSanitizer:DomSanitizer,private service: CommonService){
      this.matIconRegistry.addSvgIcon(
@@ -55,16 +37,20 @@ export class AppComponent implements OnInit{
      )
   }
 
-  
+  cartBadgeStatus=true;
 
-  directionPageToLogin(){
-   this.page='Login';
+  public cartItemsCount:number = 0;
+
+  count(num:number){
+
+    this.cartItemsCount=num;
+    
+    console.log(this.cartItemsCount);
+    if(this.cartItemsCount > 0){
+      this.cartBadgeStatus=false;
+    }
+    
   }
-
-  directionPageToSignup(){
-    this.page='Signup';
-  }
-
  
 
 }

@@ -1,27 +1,46 @@
 .container{
-    width: 35%;
-    margin-left: 500px;
-    margin-top: 150px;
+    width: 40%; 
     border: 5px solid rgb(255, 208, 0);
     border-left: none;
     border-right: none;
     border-bottom: none;
     color: white;
-
+    margin: 100px auto;
 }
 
 h2{
     margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
 }
+.btns{
+    text-align: center;
+}
+
 
 #submitOne,#submitTwo{
     background-color: rgb(255, 208, 0);
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     padding: 10px;
-    width: 40%;
-    margin: 30px 25px  ;
+    margin: auto 20px  ;
     display:inline-block;
+
+}
+
+@media screen and (max-width: 750px)  {
+    
+    .container{
+        width: 50%;
+    }
+
+    #submitOne,#submitTwo{
+        font-size: 10px;
+        margin: auto 5px  ;
+    }
+    h2{
+        font-size: 15px;
+    }
+
 }

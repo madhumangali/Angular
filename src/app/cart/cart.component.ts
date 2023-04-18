@@ -4,13 +4,15 @@ import { HomeComponent } from '../home/home.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { SigninComponent } from '../signin/signin.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
   providers: [
-    SigninComponent
+    SigninComponent,
+    NavbarComponent
   ]
 })
 export class CartComponent {
@@ -47,7 +49,9 @@ export class CartComponent {
    this.inc = this.inc - 1;
 
    if(this.app.cartItemsCount <= 0)
-    this.app.cartBadge = true;
+
+   this.app.cartBadgeStatus=true;
+    
   }
 
   buy(id:number){

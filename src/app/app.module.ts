@@ -24,6 +24,7 @@ import {MatBadge, MatBadgeModule} from '@angular/material/badge';
 import {MatButtonModule} from '@angular/material/button';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { IntropageComponent } from './intropage/intropage.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { IntropageComponent } from './intropage/intropage.component';
     BlogComponent,
     BuyComponent,
     ProductdetailsComponent,
-    IntropageComponent
+    IntropageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
